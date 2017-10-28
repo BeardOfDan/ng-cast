@@ -3,16 +3,17 @@ angular.module('video-player')
 .component('app', {
   // TODO
 
-  controller: function() {
+  controller: function(youTube) {
     this.data = exampleVideoData;
+    this.video = exampleVideoData[0];
 
-    this.selectVideo = function() {
-
+    this.result = function(query) {
+      youTube.search(query);
     };
 
     // the video list click handler
-    this.clickHandler = () => {
-      
+    this.clickHandler = (video) => {
+      this.video = video || exampleVideoData[0];
     };
   },
 
