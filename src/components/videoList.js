@@ -2,12 +2,13 @@ angular.module('video-player')
 .component('videoList', {
   // TODO
   bindings: {
-    videos: '<'
+    videos: '<',
+    onClick: '<'
   },
 
   controller: function() {
     // console.log(this.videos);
   },
 
-  templateUrl: '/src/templates/videoList.html'
+  templateUrl: 'src/templates/videoList.html'
 });

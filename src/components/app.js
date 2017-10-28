@@ -5,8 +5,17 @@ angular.module('video-player')
 
   controller: function() {
     this.data = exampleVideoData;
-    // debugger;
+
+    this.selectVideo = function() {
+
+    };
+
+    // the video list click handler
+    this.clickHandler = () => {
+      
+    };
   },
 
-  templateUrl: '/src/templates/app.html'
+  //template: require('./../templates/app.html')
+  templateUrl: 'src/templates/app.html'
 });

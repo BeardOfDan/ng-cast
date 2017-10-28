@@ -10,5 +10,5 @@ angular.module('video-player')
     // console.log(this.video);
   },
 
-  templateUrl: '/src/templates/videoPlayer.html'
+  templateUrl: 'src/templates/videoPlayer.html'
 });
