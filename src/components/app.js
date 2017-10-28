@@ -21,7 +21,7 @@ angular.module('video-player')
 
     // the video list click handler
     this.selectVideo = (video) => {
-      this.video = video || exampleVideoData[0];
+      this.currentVideo = video || exampleVideoData[0];
     };
   },
 
