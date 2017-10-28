@@ -1,30 +1,27 @@
 angular.module('video-player')
-// 
 .component('app', {
-  // TODO
 
   controller: function(youTube) {
-    this.videos = exampleVideoData;
-    this.currentVideo = exampleVideoData[0];
-
-    // this. = function() {};
-    this.searchResults = function() {};
-
-    this.updateVideos = (videos) => {
+    // callback function for the youtube search
+    this.searchResults = (videos) => {
       this.videos = videos;
       this.currentVideo = videos[0];
     };
 
+    // search for youtube videos
     this.result = (query) => {
-      youTube.search(query, this.updateVideos);
+      const options = {'query': query, 'maxResults': 5, 'key': window.YOUTUBE_API_KEY};
+      youTube.search(options, this.searchResults);
     };
 
+    // initialize the videos
+    this.result('asdf');
+    
     // the video list click handler
     this.selectVideo = (video) => {
       this.currentVideo = video || exampleVideoData[0];
     };
   },
 
-  //template: require('./../templates/app.html')
   templateUrl: 'src/templates/app.html'
 });
