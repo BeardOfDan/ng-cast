@@ -8,9 +8,9 @@ angular.module('video-player')
 
   controller: function(youTube) {
     this.query = '';
-
+    
     this.search = (query) => {
-      this.result(query);
+      return this.result(query);
     };
   },
 

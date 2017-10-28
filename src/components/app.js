@@ -4,15 +4,23 @@ angular.module('video-player')
   // TODO
 
   controller: function(youTube) {
-    this.data = exampleVideoData;
-    this.video = exampleVideoData[0];
+    this.videos = exampleVideoData;
+    this.currentVideo = exampleVideoData[0];
 
-    this.result = function(query) {
-      youTube.search(query);
+    // this. = function() {};
+    this.searchResults = function() {};
+
+    this.updateVideos = (videos) => {
+      this.videos = videos;
+      this.currentVideo = videos[0];
+    };
+
+    this.result = (query) => {
+      youTube.search(query, this.updateVideos);
     };
 
     // the video list click handler
-    this.clickHandler = (video) => {
+    this.selectVideo = (video) => {
       this.video = video || exampleVideoData[0];
     };
   },
